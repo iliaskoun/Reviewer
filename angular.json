@@ -107,5 +107,8 @@
       }
     }
   },
-  "defaultProject": "ng-project2"
+  "defaultProject": "ng-project2",
+  "cli": {
+    "analytics": "4dab4b06-9985-43cd-904c-6200ff9d0dfc"
+  }
 }

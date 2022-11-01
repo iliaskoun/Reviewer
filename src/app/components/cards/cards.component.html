@@ -49,7 +49,7 @@
             <button mat-raised-button color="primary" *ngIf="(this.auth.getrole()=='ranker' || this.auth.getrole()=='editor+ranker') && isranker(post) && !post.Finalized" [routerLink]="['/rank-candidates',post.key]">Rank</button>
         
             <button   mat-raised-button color="primary"  *ngIf="!post.Finalized  && ((iseditor(post) && (this.auth.getrole()=='editor' || this.auth.getrole()=='editor+ranker')))" (click)="this.treesrv.finalizeproject(post)">Finalize</button>
-            <button   mat-raised-button color="primary" *ngIf="post.Finalized && iseditor(post)" (click)="exportcsv(post)"><mat-icon> import_export</mat-icon></button>
+            <button   mat-raised-button color="primary" *ngIf="post.Finalized && (iseditor(post) || this.auth.getrole()=='admin' || isranker(post) || post.Open) " (click)="exportcsv(post)"><mat-icon> import_export</mat-icon></button>
                 </div>
                 <div fxLayout="column" fxLayoutAlign="center center" >
                   
